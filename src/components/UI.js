@@ -1,7 +1,33 @@
 // src/components/UI.js — reusable primitives
 import React from 'react';
 import { Pressable, Text, View, StyleSheet, ActivityIndicator } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { COLORS, RADIUS, SPACING, TYPE, SHADOWS } from '../theme';
+
+const LOGO_SIZES = {
+  sm: { box: 22, icon: 12, text: 14, gap: 7,  radius: 6 },
+  md: { box: 28, icon: 14, text: 17, gap: 7,  radius: 7 },
+  lg: { box: 44, icon: 22, text: 26, gap: 10, radius: 11 },
+};
+
+export function Logo({ size = 'md' }) {
+  const dim = LOGO_SIZES[size] || LOGO_SIZES.md;
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <View style={{
+        width: dim.box, height: dim.box, borderRadius: dim.radius,
+        backgroundColor: COLORS.primary, marginRight: dim.gap,
+        alignItems: 'center', justifyContent: 'center',
+      }}>
+        <Ionicons name="restaurant" size={dim.icon} color="#fff" />
+      </View>
+      <Text style={{ fontWeight: '700', letterSpacing: -0.3, fontSize: dim.text }}>
+        <Text style={{ color: COLORS.ink }}>Campus</Text>
+        <Text style={{ color: COLORS.primary }}>Bite</Text>
+      </Text>
+    </View>
+  );
+}
 
 export function PrimaryButton({ title, onPress, disabled, loading, style }) {
   return (
