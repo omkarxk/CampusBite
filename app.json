@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "CampusBite",
+    "slug": "campusbite",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "backgroundColor": "#FBF7F0",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.campusbite.app"
+    },
+    "android": {
+      "package": "com.campusbite.app"
+    },
+    "plugins": []
+  }
+}
